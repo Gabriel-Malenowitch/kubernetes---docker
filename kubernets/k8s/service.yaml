@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: simple-node-server-service
+spec:
+  selector:
+    app: simple-node-server
+  type: LoadBalancer
+  ports:
+    - name: simple-node-server-service
+      port: 80
+      # nodePort: 30005 #30.000 -> 32.767
+      targetPort: 3000
+      protocol: TCP
